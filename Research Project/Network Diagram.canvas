@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"g1","type":"text","text":"People","x":-560,"y":-420,"width":120,"height":40,"color":"1"},
+		{"id":"g2","type":"text","text":"Organisations","x":120,"y":-420,"width":160,"height":40,"color":"4"},
+		{"id":"g3","type":"text","text":"Places & Events","x":-220,"y":260,"width":180,"height":40,"color":"6"},
+		{"id":"lenin","type":"file","file":"Research Project/People/Lenin Vladimir.md","x":-620,"y":-320,"width":260,"height":60},
+		{"id":"bolsheviks","type":"file","file":"Research Project/Organisations/Bolsheviks.md","x":80,"y":-320,"width":260,"height":60},
+		{"id":"iskra","type":"file","file":"Research Project/Publications/Iskra.md","x":80,"y":-180,"width":260,"height":60},
+		{"id":"marxism","type":"file","file":"Research Project/Concepts/Marxism.md","x":-620,"y":-180,"width":260,"height":60},
+		{"id":"revolution","type":"file","file":"Research Project/Events/Russian Revolution.md","x":-280,"y":120,"width":280,"height":60},
+		{"id":"petrograd","type":"file","file":"Research Project/Locations/Petrograd.md","x":-280,"y":340,"width":280,"height":60}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"lenin","fromSide":"right","toNode":"bolsheviks","toSide":"left","label":"led"},
+		{"id":"e2","fromNode":"lenin","fromSide":"bottom","toNode":"marxism","toSide":"top","label":"theorist of"},
+		{"id":"e3","fromNode":"lenin","fromSide":"right","toNode":"iskra","toSide":"left","label":"edited"},
+		{"id":"e4","fromNode":"bolsheviks","fromSide":"bottom","toNode":"revolution","toSide":"top","label":"seized power"},
+		{"id":"e5","fromNode":"revolution","fromSide":"bottom","toNode":"petrograd","toSide":"top","label":"took place in"}
+	]
+}
