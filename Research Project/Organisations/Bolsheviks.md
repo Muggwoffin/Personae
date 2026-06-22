@@ -12,7 +12,7 @@ Locations:
 ideology: Marxism
 orientation: Far-left
 founded_date: 1903
-founded_location: Prague
+founded_location:
 founders:
   - "[[Lenin Vladimir]]"
 dissolved_date:
