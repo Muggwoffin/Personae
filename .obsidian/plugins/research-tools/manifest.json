@@ -1,0 +1,9 @@
+{
+  "id": "research-tools",
+  "name": "Research Tools",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Small utilities for the research vault: paste coordinates from the clipboard straight into a note's frontmatter and map.",
+  "author": "Claude (for Maurice)",
+  "isDesktopOnly": false
+}

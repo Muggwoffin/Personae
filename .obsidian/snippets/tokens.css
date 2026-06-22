@@ -1,0 +1,34 @@
+/* tokens.css — design tokens: the single source of truth for the vault's
+   palette. Consumed by the other CSS snippets (var(--…)) and, at runtime, by
+   dataviewjs views through the _theme.js module (which reads these values).
+   Keep this file identical across vaults. Load order is irrelevant — CSS
+   custom properties resolve wherever they are defined. */
+
+:root {
+  /* Note-type accents */
+  --type-person:       #C4686B;
+  --type-event:        #C4823B;
+  --type-location:     #5A8A6A;
+  --type-organisation: #5A7A9E;
+  --type-publication:  #7A609E;
+  --type-concept:      #9060C0;
+  --type-writing:      #7A9E7E;
+  --type-source:       #8C5050;
+  --type-other:        #8A8A8A;
+
+  /* Brand */
+  --brand-gold:     #d3a573;
+  --brand-gold-rgb: 211, 165, 115;
+  --rose-deep:      #8C3335;
+  --rose:           #C4686B;
+
+  /* Reading "ink" (warm browns) */
+  --ink-heading:    #463a2b;
+  --ink-h3:         #7a6033;
+  --ink-h4:         #a07a40;
+  --ink-quote:      #4a3f30;
+  --ink-caption:    #8a7a64;
+  --ink-label:      #A07060;
+  --ink-link:       #5A7A9E;
+  --ink-link-hover: #3A5A7E;
+}

@@ -1,0 +1,9 @@
+{
+  "id": "note-attribution",
+  "name": "Note Attribution",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Shows who wrote each line of a note using git history: colored line markers per author, contributor summary, and a status bar legend.",
+  "author": "Claude (for Maurice)",
+  "isDesktopOnly": true
+}

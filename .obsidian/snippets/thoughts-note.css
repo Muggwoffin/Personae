@@ -1,0 +1,88 @@
+/* ============================================================
+   Thoughts Notes  —  cssclass: thoughts-note
+   A warmer, more personal feel distinct from the main research notes
+   ============================================================ */
+
+/* ── Headings: warm amber instead of near-black ─────────────── */
+.thoughts-note h1 {
+  color: #7A5C2E;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid #E8D8B8;
+  padding-bottom: 0.3em;
+}
+
+.thoughts-note h2 {
+  color: #8C6A38;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.thoughts-note h3 {
+  color: #9E7840;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ── Left page border — a thin amber rule ───────────────────── */
+.thoughts-note .markdown-preview-section {
+  border-left: 3px solid #E0C88A;
+  padding-left: 1.4rem;
+  margin-left: 0.5rem;
+}
+
+/* ── Body text: slightly warmer, slightly looser ────────────── */
+.thoughts-note .markdown-preview-view {
+  color: #3A2E20;
+  line-height: 1.75;
+}
+
+/* ── Links: amber tone ──────────────────────────────────────── */
+.thoughts-note a.internal-link {
+  color: #9E7840 !important;
+  text-decoration-color: #D4B87A;
+}
+
+.thoughts-note a.internal-link:hover {
+  color: #7A5C2E !important;
+}
+
+.thoughts-note a.external-link {
+  color: #9E7840 !important;
+}
+
+/* ── Blockquotes: warm left bar ─────────────────────────────── */
+.thoughts-note blockquote {
+  border-left: 3px solid #D4B87A;
+  background: rgba(212, 184, 122, 0.06);
+  border-radius: 0 4px 4px 0;
+  padding: 0.5rem 1rem;
+  color: #5A4420;
+  font-style: italic;
+}
+
+/* ── Inline code: warm sand ─────────────────────────────────── */
+.thoughts-note code {
+  background: rgba(212, 184, 122, 0.15);
+  color: #7A5C2E;
+  border-radius: 3px;
+}
+
+/* ── Properties panel: warm tint ────────────────────────────── */
+.thoughts-note .metadata-container {
+  border-radius: 8px;
+  background: rgba(212, 184, 122, 0.08);
+  border: 1px solid rgba(212, 184, 122, 0.35);
+}
+
+/* ── Horizontal rule: thin amber line ───────────────────────── */
+.thoughts-note hr {
+  border: none;
+  border-top: 1px solid #E0C88A;
+  margin: 1.5rem 0;
+}
+
+/* ── Bold: slightly warmer ───────────────────────────────────── */
+.thoughts-note strong {
+  color: #5A3E18;
+}

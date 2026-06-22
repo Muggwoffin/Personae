@@ -1,0 +1,27 @@
+/* Note Attribution */
+
+.note-attribution-line {
+  /* author color applied inline via box-shadow */
+  padding-left: 16px !important;
+}
+
+.note-attribution-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  cursor: pointer;
+}
+
+.note-attribution-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 0.85em;
+}
+
+.note-attribution-dot {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+}

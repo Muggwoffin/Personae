@@ -1,0 +1,8 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "strictLineBreaks": true,
+  "attachmentFolderPath": "Attachments/Images/Pasted",
+  "openBehavior": "file:Research Project/Project Home",
+  "newFileLocation": "current"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "caption-on-paste",
+  "name": "Caption on Paste",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Prompts for a caption when you paste an image, saves the image, and renders the caption beneath it.",
+  "author": "Claude (for Maurice)",
+  "isDesktopOnly": false
+}

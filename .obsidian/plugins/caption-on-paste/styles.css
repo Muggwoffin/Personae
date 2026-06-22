@@ -1,0 +1,18 @@
+/* Caption on Paste — default caption layout.
+   Visual styling (font, color) lives in the readability.css snippet. */
+
+.image-embed.cop-captioned {
+  display: inline-block;
+  text-align: center;
+}
+
+.cop-image-caption {
+  display: block;
+  font-size: 0.82em;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 0.45em;
+  padding: 0 1em;
+  text-align: center;
+}

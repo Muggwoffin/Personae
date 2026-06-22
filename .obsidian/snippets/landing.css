@@ -1,0 +1,306 @@
+/* ============================================================
+   Landing page  —  cssclass: landing-page
+   ============================================================ */
+
+/* ── Full-width override ────────────────────────────────────── */
+.landing-page .markdown-preview-section {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.landing-page .markdown-preview-section > div {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+.landing-page .markdown-preview-pusher {
+  display: none !important;
+}
+
+/* ── Task section ───────────────────────────────────────────── */
+.landing-tasks-section {
+  padding: 1.4rem 2rem 1rem;
+  background: #FDF5F5;
+  border-bottom: 1px solid #D9AEAE;
+}
+
+.landing-tasks-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #A05050;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.landing-tasks-header::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #DDB4B4;
+}
+
+/* Style the native Obsidian task list inside the section */
+.landing-tasks-section ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem 2rem;
+}
+
+.landing-tasks-section li {
+  font-size: 0.88rem;
+  color: #3A2A2A;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.landing-tasks-section .task-list-item-checkbox {
+  accent-color: var(--rose);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Checked tasks — strikethrough and muted */
+.landing-tasks-section li[data-task="x"] {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+/* ── Stats bar ──────────────────────────────────────────────── */
+.landing-stats-bar {
+  display: flex !important;
+  width: 100%;
+  background: #F7ECEC;
+  border-bottom: 1px solid #D9AEAE;
+  margin: 0 !important;
+}
+
+.landing-stat {
+  flex: 1;
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+  border-right: 1px solid #D9AEAE;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.landing-stat:last-child { border-right: none; }
+
+.landing-stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--rose-deep);
+  line-height: 1;
+  display: block;
+}
+
+.landing-stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #A05555;
+  display: block;
+}
+
+.landing-stats-bar .dataview,
+.landing-stats-bar p { display: contents !important; margin: 0 !important; padding: 0 !important; }
+
+/* ── Card grid ──────────────────────────────────────────────── */
+.landing-card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1rem !important;
+  padding: 1.4rem 2rem !important;
+  background: #F9F3F3;
+  margin: 0 !important;
+}
+
+/* ── Individual cards ───────────────────────────────────────── */
+.landing-card {
+  background: #FFFFFF !important;
+  border: 1px solid #D9B2B2 !important;
+  border-top: 3px solid var(--rose) !important;
+  border-radius: 7px !important;
+  padding: 1.2rem 1.3rem !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.12s ease, border-top-color 0.12s ease !important;
+  cursor: pointer;
+}
+
+.landing-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(150, 50, 50, 0.14) !important;
+  background: #FDF3F3 !important;
+  border-top-color: var(--rose-deep) !important;
+  text-decoration: none !important;
+}
+
+.landing-card-icon  { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1; display: block; }
+.landing-card-title { font-size: 0.98rem; font-weight: 600; color: var(--rose-deep); margin-bottom: 0.25rem; letter-spacing: 0.01em; display: block; }
+.landing-card-desc  { font-size: 0.76rem; color: #7A5050; line-height: 1.45; display: block; }
+
+/* ── Daily scratchpad ───────────────────────────────────────── */
+.landing-scratchpad {
+  padding: 1.2rem 2rem 1.4rem;
+  background: #FDF5F5;
+  border-top: 1px solid #D9AEAE;
+}
+
+.landing-scratchpad-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #A05050;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.landing-scratchpad-header::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #DDB4B4;
+}
+
+.landing-scratchpad-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+#landing-daily-input {
+  flex: 1;
+  min-height: 72px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #D9B2B2;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: var(--text-normal);
+  font-family: var(--font-text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#landing-daily-input:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 2px rgba(196, 104, 107, 0.15);
+}
+
+#landing-daily-input::placeholder { color: #C0A0A0; }
+
+#landing-daily-btn {
+  padding: 0.55rem 1.1rem;
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+#landing-daily-btn:hover  { background: var(--rose-deep); transform: translateY(-1px); }
+#landing-daily-btn:active { transform: translateY(0); }
+
+.landing-daily-link {
+  margin-top: 0.45rem;
+  font-size: 0.72rem;
+  color: #A05050;
+}
+
+.landing-daily-link a { color: var(--rose-deep) !important; text-decoration: none; }
+.landing-daily-link a:hover { text-decoration: underline; }
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.landing-footer {
+  padding: 0.75rem 2rem;
+  background: #F2E8E8;
+  border-top: 1px solid #D9AEAE;
+  font-size: 0.74rem;
+  color: #9A6060;
+  display: flex !important;
+  gap: 1.2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.landing-footer a { color: var(--rose-deep) !important; text-decoration: none !important; }
+.landing-footer a:hover { text-decoration: underline !important; }
+
+/* ── Hero banner ────────────────────────────────────────────────
+   The <div class="landing-hero"> block at the very top of Project Home.
+   It stands in for the note title, which we hide. */
+.landing-page .inline-title { display: none; }
+
+.landing-hero {
+  padding: 2.6rem 2rem 2.2rem;
+  background: linear-gradient(165deg, #FBF1F1 0%, #F5E5E5 100%);
+  border-bottom: 3px solid var(--rose);
+  position: relative;
+}
+
+.landing-hero-kicker {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #A05555;
+  margin-bottom: 0.55rem;
+}
+
+.landing-hero-title {
+  display: block;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 2.7rem;
+  line-height: 1.04;
+  font-weight: 700;
+  color: var(--rose-deep);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.landing-hero-tagline {
+  display: block;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: #7A5050;
+  max-width: 54ch;
+}
+
+.theme-dark .landing-hero {
+  background: linear-gradient(165deg, #2b1c1c 0%, #211616 100%);
+  border-bottom-color: var(--rose-deep);
+}
+.theme-dark .landing-hero-kicker  { color: #C58888; }
+.theme-dark .landing-hero-title   { color: #E6A8A8; }
+.theme-dark .landing-hero-tagline { color: #C29A9A; }
+
+@media (max-width: 600px) {
+  .landing-hero { padding: 1.8rem 1.2rem 1.5rem; }
+  .landing-hero-title { font-size: 2rem; }
+  .landing-hero-tagline { font-size: 0.95rem; }
+}

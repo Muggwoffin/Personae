@@ -1,0 +1,15 @@
+{
+  "accentColor": "#d3a573",
+  "baseFontSize": 20,
+  "cssTheme": "",
+  "translucency": false,
+  "enabledCssSnippets": [
+    "tokens",
+    "Person Snippet",
+    "landing",
+    "thoughts-note",
+    "readability",
+    "mobile"
+  ],
+  "theme": "moonstone"
+}

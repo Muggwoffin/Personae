@@ -1,0 +1,78 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "Templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": false,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "Research Project/People",
+      "template": "Templates/Person Template.md"
+    },
+    {
+      "folder": "Research Project/Concepts",
+      "template": "Templates/Concept Template.md"
+    },
+    {
+      "folder": "Research Project/Events",
+      "template": "Templates/Event Template.md"
+    },
+    {
+      "folder": "Research Project/Locations",
+      "template": "Templates/Location Template.md"
+    },
+    {
+      "folder": "Research Project/Organisations",
+      "template": "Templates/Organisation Template.md"
+    },
+    {
+      "folder": "Research Project/Publications",
+      "template": "Templates/Publication Template.md"
+    },
+    {
+      "folder": "Research Project/Interviews",
+      "template": "Templates/Interview Template.md"
+    },
+    {
+      "folder": "Research Project/Sources",
+      "template": "Templates/New Archive Note.md"
+    },
+    {
+      "folder": "Writing Projects",
+      "template": "Templates/Writing Project Template.md"
+    },
+    {
+      "folder": "Daily Notes",
+      "template": "Templates/Daily Note Template.md"
+    },
+    {
+      "folder": "Research Log",
+      "template": "Templates/Research Log Template.md"
+    }
+  ],
+  "enable_file_templates": false,
+  "file_templates": [
+    {
+      "regex": ".*",
+      "template": ""
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": [
+    ""
+  ],
+  "intellisense_render": 1
+}

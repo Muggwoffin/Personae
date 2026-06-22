@@ -1,0 +1,811 @@
+/* ============================================================
+   READABILITY SNIPPET
+   Palette tokens live in tokens.css; this file consumes them via
+   var(--…). Sections are grouped below — the numbers match the
+   banners in the file and are kept in place to preserve the cascade:
+
+   BASE — element typography
+     1. Blockquotes · 2. Image captions · 4. Tables ·
+     5. Footnotes · 17. Heading hierarchy
+   LAYOUT
+     18. Reading measure
+   COMPONENTS
+     3. Source callouts · 6. Note-type edge · 12. Inline event chips ·
+     13. Event pills · 14. Zotero citation card · 16. Idea callout ·
+     19. Metadata pills
+   INTERACTION / STATE
+     7. Unresolved links · 8. Hover · 10. Note fade-in ·
+     11. Page-preview popovers
+   THEME / OVERRIDES
+     9. Dark mode · 15. Footnote markers inside callouts
+   ============================================================ */
+
+/* ── 1. Blockquotes: elegant serif pull-quote ───────────────── */
+
+.markdown-rendered blockquote,
+.markdown-source-view.mod-cm6 .HyperMD-quote {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+               Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.06em;
+  line-height: 1.8;
+  color: #4a3f30;
+}
+
+.markdown-rendered blockquote {
+  position: relative;
+  border-left: 2px solid var(--brand-gold);
+  margin: 1.8em 1.5em 1.8em 1.2em;
+  padding: 0.4em 1.2em 0.4em 2.2em;
+  background: transparent;
+}
+
+/* Large decorative opening quotation mark */
+.markdown-rendered blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0.25em;
+  top: -0.18em;
+  font-family: Georgia, serif;
+  font-size: 3.2em;
+  font-style: normal;
+  line-height: 1;
+  color: rgba(var(--brand-gold-rgb), 0.55);
+  pointer-events: none;
+}
+
+.markdown-rendered blockquote p {
+  margin: 0.4em 0;
+}
+
+/* Attribution convention: end a quote with a line starting with
+   an em-dash, e.g.  — Author, 1939  */
+.markdown-rendered blockquote p:last-child:has(+ *),
+.markdown-rendered blockquote cite {
+  font-style: normal;
+}
+
+/* De-italicise links inside quotes so they stay legible */
+.markdown-rendered blockquote a {
+  font-style: normal;
+}
+
+/* Live Preview quote lines: subtler match */
+.markdown-source-view.mod-cm6 .HyperMD-quote {
+  border-left: 2px solid var(--brand-gold);
+}
+
+/* ── 2. Image captions ──────────────────────────────────────── */
+
+/* Caption text rendered by the Caption on Paste plugin */
+.cop-image-caption,
+figure.image-captioned figcaption {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+               Georgia, serif;
+  font-style: italic;
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: #8a7a64;
+  text-align: center;
+  margin-top: 0.45em;
+  padding: 0 1.5em;
+}
+
+/* Frame the images themselves a little more gently */
+.markdown-rendered .image-embed img,
+.markdown-source-view.mod-cm6 .image-embed img {
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(60, 45, 25, 0.18);
+}
+
+/* Center captioned figures */
+figure.image-captioned {
+  margin: 1.4em auto;
+  text-align: center;
+}
+
+/* A touch of breathing room around plain embedded images too */
+.markdown-rendered .image-embed {
+  margin: 0.6em 0;
+}
+
+/* ── 3. Source callouts ─────────────────────────────────────────
+   Usage:
+   > [!memoir] Author, *Title*, p. 42
+   > Quote or summary here...
+
+   Types: source · memoir · archive · report · translation
+   ──────────────────────────────────────────────────────────── */
+
+.callout[data-callout="source"],
+.callout[data-callout="memoir"],
+.callout[data-callout="archive"],
+.callout[data-callout="report"],
+.callout[data-callout="translation"] {
+  border-radius: 6px;
+  border-left-width: 3px;
+  padding: 0.6em 0.9em;
+}
+
+.callout[data-callout="source"] {
+  --callout-color: 122, 92, 46;          /* amber-brown — generic source */
+  --callout-icon: lucide-book-open;
+}
+
+.callout[data-callout="memoir"] {
+  --callout-color: 158, 120, 64;         /* warm amber — memoirs, letters */
+  --callout-icon: lucide-feather;
+}
+
+.callout[data-callout="archive"] {
+  --callout-color: 140, 58, 58;          /* dark red — official files */
+  --callout-icon: lucide-archive;
+}
+
+.callout[data-callout="report"] {
+  --callout-color: 70, 90, 120;          /* slate blue — reports */
+  --callout-icon: lucide-file-text;
+}
+
+.callout[data-callout="translation"] {
+  --callout-color: 80, 110, 75;          /* muted green — translations */
+  --callout-icon: lucide-languages;
+}
+
+/* ── 4. Tables: monograph style with row striping ───────────── */
+
+.markdown-rendered table {
+  border-collapse: collapse;
+  margin: 1.2em 0;
+}
+
+.markdown-rendered th {
+  font-weight: 600;
+  border-bottom: 2px solid var(--brand-gold);
+  padding: 0.45em 0.8em;
+  text-align: left;
+}
+
+.markdown-rendered td {
+  padding: 0.4em 0.8em;
+  border: none;
+  border-bottom: 1px solid rgba(var(--brand-gold-rgb), 0.25);
+}
+
+.markdown-rendered tbody tr:nth-child(even) {
+  background-color: rgba(var(--brand-gold-rgb), 0.07);
+}
+
+.markdown-rendered tbody tr:hover {
+  background-color: rgba(var(--brand-gold-rgb), 0.14);
+}
+
+/* ── 5. Footnotes: smaller, set off by a hairline rule ──────── */
+
+.markdown-rendered .footnotes {
+  margin-top: 2.5em;
+  border-top: 1px solid rgba(var(--brand-gold-rgb), 0.6);
+  padding-top: 0.8em;
+  font-size: 0.82em;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.markdown-rendered .footnotes ol {
+  padding-left: 1.4em;
+}
+
+.markdown-rendered .footnotes li {
+  margin-bottom: 0.4em;
+}
+
+/* Hide the default <hr> Obsidian places above the footnote block
+   (we draw our own rule) */
+.markdown-rendered .footnotes hr {
+  display: none;
+}
+
+/* Back-reference arrows: subtle until hovered */
+.markdown-rendered .footnote-backref {
+  text-decoration: none;
+  opacity: 0.5;
+}
+.markdown-rendered .footnote-backref:hover {
+  opacity: 1;
+}
+
+/* In-text footnote markers: a touch more air, amber tint */
+.markdown-rendered sup.footnote-ref a {
+  text-decoration: none;
+  padding: 0 0.1em;
+  color: #b08040;
+}
+
+/* ── 6. Note-type identity: colored top edge per note type ──
+   Matches each type's infobox accent so you know where you are
+   at a glance, in both reading and editing views. */
+
+.markdown-preview-view.person-note,
+.markdown-source-view.person-note       { border-top: 3px solid var(--type-person); }
+.markdown-preview-view.event-note,
+.markdown-source-view.event-note        { border-top: 3px solid var(--type-event); }
+.markdown-preview-view.location-note,
+.markdown-source-view.location-note     { border-top: 3px solid var(--type-location); }
+.markdown-preview-view.organisation-note,
+.markdown-source-view.organisation-note { border-top: 3px solid var(--type-organisation); }
+.markdown-preview-view.publication-note,
+.markdown-source-view.publication-note  { border-top: 3px solid var(--type-publication); }
+.markdown-preview-view.concept-note,
+.markdown-source-view.concept-note      { border-top: 3px solid var(--type-concept); }
+.markdown-preview-view.writing-note,
+.markdown-source-view.writing-note      { border-top: 3px solid var(--type-writing); }
+.markdown-preview-view.source-note,
+.markdown-source-view.source-note       { border-top: 3px solid var(--type-source); }
+
+/* ── 7. Unresolved links: stubs you haven't written yet ────── */
+
+.markdown-rendered a.internal-link.is-unresolved,
+.markdown-source-view .is-unresolved {
+  color: #b08585;
+  opacity: 0.75;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: opacity 0.12s, background-color 0.12s;
+  border-radius: 3px;
+}
+
+.markdown-rendered a.internal-link.is-unresolved:hover,
+.markdown-source-view .is-unresolved:hover {
+  opacity: 1;
+  text-decoration-style: solid;
+  background-color: rgba(176, 133, 133, 0.14);
+}
+
+/* ── 8. Hover effects ───────────────────────────────────────── */
+
+/* Internal links: soft amber pill on hover */
+.markdown-rendered a.internal-link {
+  transition: color 0.12s, background-color 0.12s, box-shadow 0.12s;
+  border-radius: 3px;
+}
+.markdown-rendered a.internal-link:hover {
+  background-color: rgba(var(--brand-gold-rgb), 0.18);
+  box-shadow: 0 0 0 3px rgba(var(--brand-gold-rgb), 0.18);
+}
+
+/* Images: gentle lift */
+.markdown-rendered .image-embed img,
+.markdown-source-view.mod-cm6 .image-embed img {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.markdown-rendered .image-embed img:hover,
+.markdown-source-view.mod-cm6 .image-embed img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(60, 45, 25, 0.25);
+}
+
+/* Source callouts: lift on hover */
+.callout[data-callout="source"],
+.callout[data-callout="memoir"],
+.callout[data-callout="archive"],
+.callout[data-callout="report"],
+.callout[data-callout="translation"] {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.callout[data-callout="source"]:hover,
+.callout[data-callout="memoir"]:hover,
+.callout[data-callout="archive"]:hover,
+.callout[data-callout="report"]:hover,
+.callout[data-callout="translation"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(60, 45, 25, 0.12);
+}
+
+/* Blockquotes: rule and quotation mark warm up on hover */
+.markdown-rendered blockquote {
+  transition: border-color 0.15s;
+}
+.markdown-rendered blockquote::before {
+  transition: color 0.15s;
+}
+.markdown-rendered blockquote:hover {
+  border-left-color: #b8854a;
+}
+.markdown-rendered blockquote:hover::before {
+  color: rgba(var(--brand-gold-rgb), 0.9);
+}
+
+/* Footnote markers and entries */
+.markdown-rendered sup.footnote-ref a {
+  transition: background-color 0.12s;
+  border-radius: 3px;
+}
+.markdown-rendered sup.footnote-ref a:hover {
+  background-color: rgba(var(--brand-gold-rgb), 0.25);
+}
+.markdown-rendered .footnotes li {
+  transition: background-color 0.12s;
+  border-radius: 4px;
+}
+.markdown-rendered .footnotes li:hover {
+  background-color: rgba(var(--brand-gold-rgb), 0.1);
+}
+
+/* ── 9. Dark mode adjustments ───────────────────────────────── */
+
+.theme-dark .markdown-rendered blockquote,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-quote {
+  color: #d6c7ae;
+}
+
+.theme-dark .markdown-rendered blockquote::before {
+  color: rgba(var(--brand-gold-rgb), 0.45);
+}
+
+.theme-dark .cop-image-caption,
+.theme-dark figure.image-captioned figcaption {
+  color: #b3a489;
+}
+
+.theme-dark .markdown-rendered .image-embed img,
+.theme-dark .markdown-source-view.mod-cm6 .image-embed img {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark .markdown-rendered .image-embed img:hover,
+.theme-dark .markdown-source-view.mod-cm6 .image-embed img:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.theme-dark .markdown-rendered sup.footnote-ref a {
+  color: var(--brand-gold);
+}
+
+.theme-dark .markdown-rendered a.internal-link:hover {
+  background-color: rgba(var(--brand-gold-rgb), 0.14);
+  box-shadow: 0 0 0 3px rgba(var(--brand-gold-rgb), 0.14);
+}
+
+.theme-dark .markdown-rendered a.internal-link.is-unresolved,
+.theme-dark .markdown-source-view .is-unresolved {
+  color: #c9a0a0;
+}
+
+.theme-dark .callout[data-callout="source"]:hover,
+.theme-dark .callout[data-callout="memoir"]:hover,
+.theme-dark .callout[data-callout="archive"]:hover,
+.theme-dark .callout[data-callout="report"]:hover,
+.theme-dark .callout[data-callout="translation"]:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* ── 10. Note fade-in ───────────────────────────────────────── */
+
+@keyframes readabilityFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.workspace-leaf-content[data-type="markdown"] .view-content {
+  animation: readabilityFadeIn 0.16s ease-out;
+}
+
+/* ── 11. Page preview popovers (hover a link with Ctrl) ─────── */
+
+.popover.hover-popover {
+  border: 1px solid var(--brand-gold);
+  border-radius: 8px;
+  box-shadow: 0 10px 32px rgba(60, 45, 25, 0.28);
+  animation: readabilityFadeIn 0.13s ease-out;
+  overflow: hidden;
+}
+
+.popover.hover-popover .markdown-embed {
+  padding: 0.4em 0.9em;
+}
+
+.theme-dark .popover.hover-popover {
+  border-color: rgba(var(--brand-gold-rgb), 0.6);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ── 12. Inline event chips: [event:: 1937-07-16 | text] ───── */
+
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="event"]) {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25em;
+  background: rgba(var(--brand-gold-rgb), 0.16);
+  border: 1px solid rgba(var(--brand-gold-rgb), 0.5);
+  border-radius: 10px;
+  padding: 0.05em 0.5em;
+  font-size: 0.82em;
+  transition: background-color 0.12s, box-shadow 0.12s;
+}
+
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="event"]):hover {
+  background: rgba(var(--brand-gold-rgb), 0.3);
+  box-shadow: 0 1px 6px rgba(60, 45, 25, 0.15);
+}
+
+/* Replace the "event" key label with a small clock */
+.markdown-rendered .inline-field-key[data-dv-key="event"] {
+  font-size: 0;
+  background: none;
+  padding: 0;
+}
+.markdown-rendered .inline-field-key[data-dv-key="event"]::before {
+  content: "🕑";
+  font-size: 0.9rem;
+}
+
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="event"]) .inline-field-value {
+  background: none;
+  padding: 0;
+  color: #8a6a3a;
+  font-style: italic;
+}
+
+.theme-dark .markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="event"]) .inline-field-value {
+  color: #d3b894;
+}
+
+/* ── 13. Event pills: dates marked via right-click → Create event ── */
+
+.hist-event {
+  display: inline;
+  background: linear-gradient(180deg, rgba(var(--brand-gold-rgb), 0.18), rgba(var(--brand-gold-rgb), 0.28));
+  border: 1px solid rgba(196, 130, 59, 0.55);
+  border-radius: 10px;
+  padding: 0.04em 0.45em;
+  white-space: nowrap;
+  color: #8a5a25;
+  font-weight: 500;
+  cursor: help;
+  transition: background-color 0.12s, box-shadow 0.12s, border-color 0.12s;
+  box-decoration-break: clone;
+}
+
+.hist-event::before {
+  content: "🕑";
+  font-size: 0.78em;
+  margin-right: 0.3em;
+  opacity: 0.8;
+}
+
+.hist-event:hover {
+  background: rgba(var(--brand-gold-rgb), 0.4);
+  border-color: #c4823b;
+  box-shadow: 0 1px 6px rgba(60, 45, 25, 0.18);
+}
+
+.theme-dark .hist-event {
+  color: #e3c194;
+  background: linear-gradient(180deg, rgba(var(--brand-gold-rgb), 0.12), rgba(var(--brand-gold-rgb), 0.2));
+}
+
+.theme-dark .hist-event:hover {
+  background: rgba(var(--brand-gold-rgb), 0.3);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ── 14. Zotero citation card ───────────────────────────────────
+   Restyles the citekey:: / title:: / authors:: … inline-field block
+   the Zotero importer writes at the top of source notes into a clean,
+   aligned reference card. PURELY VISUAL — the inline fields themselves
+   are untouched, so Dataview (p.citekey, p.title, …) and the clickable
+   url / PDF links keep working. Reading view only. Case-insensitive key
+   matching ([… i]) covers citekey / itemType / bookTitle / zotero_link
+   regardless of how Dataview cases them.
+   ──────────────────────────────────────────────────────────── */
+
+/* Each bibliographic field becomes one aligned label → value row */
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="citekey" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="title" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="authors" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="year" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="itemtype" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="journal" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="volume" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="issue" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="pages" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="publisher" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="place" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="booktitle" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="editor" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="doi" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="url" i]),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="zotero_link" i]) {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9em;
+  margin: 0;
+  padding: 0.2em 0.55em;
+  font-style: normal;
+  font-size: 0.92em;
+  border-bottom: 1px solid rgba(var(--brand-gold-rgb), 0.18);
+  border-left: 3px solid rgba(var(--brand-gold-rgb), 0.55);
+  background: rgba(var(--brand-gold-rgb), 0.05);
+}
+
+/* The key column: small uppercase label, fixed width so values align */
+.markdown-rendered .inline-field-key[data-dv-key="citekey" i],
+.markdown-rendered .inline-field-key[data-dv-key="title" i],
+.markdown-rendered .inline-field-key[data-dv-key="authors" i],
+.markdown-rendered .inline-field-key[data-dv-key="year" i],
+.markdown-rendered .inline-field-key[data-dv-key="itemtype" i],
+.markdown-rendered .inline-field-key[data-dv-key="journal" i],
+.markdown-rendered .inline-field-key[data-dv-key="volume" i],
+.markdown-rendered .inline-field-key[data-dv-key="issue" i],
+.markdown-rendered .inline-field-key[data-dv-key="pages" i],
+.markdown-rendered .inline-field-key[data-dv-key="publisher" i],
+.markdown-rendered .inline-field-key[data-dv-key="place" i],
+.markdown-rendered .inline-field-key[data-dv-key="booktitle" i],
+.markdown-rendered .inline-field-key[data-dv-key="editor" i],
+.markdown-rendered .inline-field-key[data-dv-key="doi" i],
+.markdown-rendered .inline-field-key[data-dv-key="url" i],
+.markdown-rendered .inline-field-key[data-dv-key="zotero_link" i] {
+  flex: 0 0 7.5em;
+  text-align: right;
+  background: none;
+  padding: 0;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a7b4f;
+}
+
+/* The value column: normal reading text */
+.markdown-rendered .inline-field-key[data-dv-key="citekey" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="title" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="authors" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="year" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="itemtype" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="journal" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="volume" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="issue" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="pages" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="publisher" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="place" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="booktitle" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="editor" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="doi" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="url" i] + .inline-field-value,
+.markdown-rendered .inline-field-key[data-dv-key="zotero_link" i] + .inline-field-value {
+  background: none;
+  padding: 0;
+  color: var(--text-normal);
+  font-size: 1em;
+}
+
+/* Title gets a touch more weight as the de-facto card heading */
+.markdown-rendered .inline-field-key[data-dv-key="title" i] + .inline-field-value {
+  font-weight: 600;
+  font-size: 1.05em;
+  color: var(--text-normal);
+}
+
+/* Hide empty bibliographic fields (Dataview trims the value, so a
+   blank field has an :empty value span) — no more rows of "journal::" */
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="citekey" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="title" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="authors" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="year" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="itemtype" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="journal" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="volume" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="issue" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="pages" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="publisher" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="place" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="booktitle" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="editor" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="doi" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="url" i]):has(.inline-field-value:empty),
+.markdown-rendered .inline-field:has(.inline-field-key[data-dv-key="zotero_link" i]):has(.inline-field-value:empty) {
+  display: none;
+}
+
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="citekey" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="title" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="authors" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="year" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="itemtype" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="journal" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="volume" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="issue" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="pages" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="publisher" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="place" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="booktitle" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="editor" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="doi" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="url" i],
+.theme-dark .markdown-rendered .inline-field-key[data-dv-key="zotero_link" i] {
+  color: #d3b894;
+}
+
+/* ── 15. Footnote markers inside callouts ───────────────────────
+   In callouts the footnote reference was rendering as a plain,
+   full-size number. Force it back to a small raised superscript
+   link, tinted with the callout's own accent colour for contrast. */
+
+.markdown-rendered .callout sup.footnote-ref,
+.markdown-rendered .callout .footnote-ref {
+  font-size: 0.72em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.markdown-rendered .callout sup.footnote-ref a,
+.markdown-rendered .callout .footnote-ref a,
+.markdown-rendered .callout a.footnote-link {
+  font-size: inherit;
+  vertical-align: super;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 0.12em;
+  border-radius: 3px;
+  color: rgb(var(--callout-color));
+  transition: background-color 0.12s;
+}
+
+.markdown-rendered .callout sup.footnote-ref a:hover,
+.markdown-rendered .callout .footnote-ref a:hover,
+.markdown-rendered .callout a.footnote-link:hover {
+  background-color: rgba(var(--callout-color), 0.2);
+}
+
+/* ── 16. Idea callout ───────────────────────────────────────────
+   Usage:
+   > [!idea] Optional title
+   > A thought of your own that relates to the wider text.
+
+   A general-purpose lightbulb callout for your own ideas /
+   insights, distinct from the source callouts. */
+
+.callout[data-callout="idea"] {
+  --callout-color: 202, 145, 24;          /* warm lightbulb gold */
+  --callout-icon: lucide-lightbulb;
+  border-radius: 6px;
+  border-left-width: 3px;
+  padding: 0.6em 0.9em;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.callout[data-callout="idea"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(60, 45, 25, 0.14);
+}
+
+.theme-dark .callout[data-callout="idea"] {
+  --callout-color: 224, 178, 70;          /* brighter gold for dark mode */
+}
+
+.theme-dark .callout[data-callout="idea"]:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* ── 17. Heading hierarchy ──────────────────────────────────────
+   Give long notes a clearer spine: serif headings, a hairline gold
+   rule under each H2, a tinted H3 and a small-caps H4 kicker.
+   Landing pages keep their own styling (excluded below). */
+
+.markdown-preview-view:not(.landing-page) h1,
+.markdown-preview-view:not(.landing-page) h2,
+.markdown-preview-view:not(.landing-page) h3,
+.markdown-preview-view:not(.landing-page) h4,
+.markdown-source-view.mod-cm6 .HyperMD-header {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+               Georgia, "Times New Roman", serif;
+  color: #463a2b;
+}
+
+.markdown-preview-view:not(.landing-page) h1 {
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+
+.markdown-preview-view:not(.landing-page) h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1.9em 0 0.55em;
+  padding-bottom: 0.22em;
+  border-bottom: 1px solid rgba(var(--brand-gold-rgb), 0.40);
+}
+
+.markdown-preview-view:not(.landing-page) h3 {
+  font-size: 1.16em;
+  font-weight: 600;
+  color: #7a6033;
+  letter-spacing: 0.015em;
+  margin: 1.5em 0 0.4em;
+}
+
+.markdown-preview-view:not(.landing-page) h4 {
+  font-size: 0.82em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: #a07a40;
+  margin: 1.35em 0 0.3em;
+}
+
+/* Live Preview: match colour without the rule (keeps the editor's
+   line metrics intact) */
+.markdown-source-view.mod-cm6 .HyperMD-header-3 { color: #7a6033; }
+.markdown-source-view.mod-cm6 .HyperMD-header-4 { color: #a07a40; }
+
+.theme-dark .markdown-preview-view:not(.landing-page) h1,
+.theme-dark .markdown-preview-view:not(.landing-page) h2 { color: #e3d3b8; }
+.theme-dark .markdown-preview-view:not(.landing-page) h3 { color: #d8bd92; }
+.theme-dark .markdown-preview-view:not(.landing-page) h4 { color: #cdae74; }
+.theme-dark .markdown-preview-view:not(.landing-page) h2 {
+  border-bottom-color: rgba(var(--brand-gold-rgb), 0.26);
+}
+
+/* ── 18. Comfortable reading measure (Reading view) ─────────────
+   Cap the width of prose blocks for legibility and centre them,
+   while letting media break out wide: dataviewjs infoboxes, the
+   Leaflet maps, tables, images and code keep the full column. */
+
+.markdown-preview-view:not(.landing-page) {
+  --reading-measure: 34rem;
+}
+
+.markdown-preview-view:not(.landing-page) .markdown-preview-sizer > :is(
+  .el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6,
+  .el-p, .el-ul, .el-ol, .el-blockquote, .el-hr) {
+  max-width: var(--reading-measure);
+  margin-inline: auto;
+}
+
+/* Callouts, and the tagged dataviewjs views (Bibliography, Related Notes),
+   share the prose's reading measure — they don't bleed wider than the text.
+   (Infoboxes, family tree, maps, tables and the databases stay full-width.) */
+.markdown-preview-view:not(.landing-page) .markdown-preview-sizer .callout,
+.markdown-preview-view:not(.landing-page) .markdown-preview-sizer .measured-view {
+  max-width: var(--reading-measure);
+  margin-inline: auto;
+}
+
+/* ── 19. Metadata property pills ────────────────────────────────
+   Frame the properties panel as a soft card and render list/tag
+   values as warm rounded pills, echoing the family-tree chips. */
+
+.markdown-preview-view .metadata-container,
+.markdown-source-view .metadata-container {
+  background: rgba(var(--brand-gold-rgb), 0.06);
+  border: 1px solid rgba(var(--brand-gold-rgb), 0.22);
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+}
+
+.metadata-container .metadata-property-key { color: #8a7a64; }
+
+.metadata-container .multi-select-pill {
+  background: var(--background-primary);
+  border: 1px solid rgba(var(--brand-gold-rgb), 0.5);
+  border-radius: 999px;
+  padding: 1px 9px;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.metadata-container .multi-select-pill:hover {
+  background: rgba(var(--brand-gold-rgb), 0.16);
+  border-color: var(--brand-gold);
+}
+
+.theme-dark .markdown-preview-view .metadata-container,
+.theme-dark .markdown-source-view .metadata-container {
+  background: rgba(var(--brand-gold-rgb), 0.05);
+  border-color: rgba(var(--brand-gold-rgb), 0.18);
+}
+.theme-dark .metadata-container .multi-select-pill {
+  background: var(--background-secondary);
+  border-color: rgba(var(--brand-gold-rgb), 0.4);
+}

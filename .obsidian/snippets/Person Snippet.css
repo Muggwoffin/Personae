@@ -1,0 +1,96 @@
+/* Callout styling for the person bio box */
+.callout[data-callout="person"] {
+  --callout-color: 37, 99, 235;        /* blue-ish */
+  --callout-icon: lucide-user;         /* user icon */
+  border-radius: 8px;
+  padding-top: 0.5rem;
+}
+
+.callout[data-callout="person"] img {
+  border-radius: 4px;
+}
+
+/* Make the Properties panel look like a card on person notes */
+.person-note .metadata-container {
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.person-note .metadata-property-key {
+  font-weight: 600;
+}
+
+/* ── Meta Bind INPUT fields — styled to match palette ──────── */
+.person-note .metadata-input-wrapper input[type="text"],
+.person-note .metadata-input-wrapper input[type="date"] {
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 4px;
+  background: rgba(37, 99, 235, 0.03);
+  padding: 0.2rem 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-normal);
+  transition: border-color 0.15s;
+}
+.person-note .metadata-input-wrapper input:focus {
+  border-color: rgba(37, 99, 235, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Boolean (true/false) property toggles */
+.person-note .metadata-input-wrapper input[type="checkbox"] {
+  accent-color: #2563eb;
+  width: 14px;
+  height: 14px;
+}
+
+/* Callout table spacing */
+.callout[data-callout="person"] table {
+  margin: 0.5rem 0;
+  border-collapse: collapse;
+}
+.callout[data-callout="person"] td {
+  padding: 0.25rem 0.5rem;
+  vertical-align: middle;
+}
+.callout[data-callout="person"] td:first-child {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  padding-right: 1rem;
+}
+
+/* Organisation note — same callout styling in teal */
+.callout[data-callout="person"] .organisation-note,
+.organisation-note .callout[data-callout="person"] {
+  --callout-color: 13, 148, 136;
+}
+
+/* ── Thoughts notes — softer, warmer feel ───────────────────── */
+.thoughts-note h1, .thoughts-note h2 {
+  color: #6B5A4E;
+  border-bottom: 1px solid #E8DDD5;
+}
+.thoughts-note .markdown-preview-section {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Event notes ────────────────────────────────────────────── */
+.event-note .metadata-container {
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(215, 100, 50, 0.05);
+  border: 1px solid rgba(215, 100, 50, 0.2);
+}
+
+/* ── Writing notes ──────────────────────────────────────────── */
+.writing-note .metadata-container {
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(90, 120, 80, 0.05);
+  border: 1px solid rgba(90, 120, 80, 0.2);
+}
