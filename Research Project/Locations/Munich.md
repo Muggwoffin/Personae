@@ -22,4 +22,4 @@ updated: 2026-06-18
 
 # Munich
 
-Where *Iskra* was first printed (1900–1902) before the editorial board moved to London. *Sample location — replace with your own.*
+*Sample location — replace with your own.*
