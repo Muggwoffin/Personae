@@ -29,7 +29,7 @@
   font-style: italic;
   font-size: 1.06em;
   line-height: 1.8;
-  color: #4a3f30;
+  color: var(--ink-quote);
 }
 
 .markdown-rendered blockquote {
@@ -85,7 +85,7 @@ figure.image-captioned figcaption {
   font-style: italic;
   font-size: 0.82em;
   line-height: 1.5;
-  color: #8a7a64;
+  color: var(--ink-caption);
   text-align: center;
   margin-top: 0.45em;
   padding: 0 1.5em;
@@ -122,7 +122,7 @@ figure.image-captioned {
 .callout[data-callout="archive"],
 .callout[data-callout="report"],
 .callout[data-callout="translation"] {
-  border-radius: 6px;
+  border-radius: 8px;
   border-left-width: 3px;
   padding: 0.6em 0.9em;
 }
@@ -161,8 +161,12 @@ figure.image-captioned {
 
 .markdown-rendered th {
   font-weight: 600;
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-caption);
   border-bottom: 2px solid var(--brand-gold);
-  padding: 0.45em 0.8em;
+  padding: 0.5em 0.98em;
   text-align: left;
 }
 
@@ -218,7 +222,7 @@ figure.image-captioned {
 .markdown-rendered sup.footnote-ref a {
   text-decoration: none;
   padding: 0 0.1em;
-  color: #b08040;
+  color: var(--ink-h4);
 }
 
 /* ── 6. Note-type identity: colored top edge per note type ──
@@ -311,7 +315,7 @@ figure.image-captioned {
   transition: color 0.15s;
 }
 .markdown-rendered blockquote:hover {
-  border-left-color: #b8854a;
+  border-left-color: var(--brand-gold-deep);
 }
 .markdown-rendered blockquote:hover::before {
   color: rgba(var(--brand-gold-rgb), 0.9);
@@ -670,7 +674,7 @@ figure.image-captioned {
 .callout[data-callout="idea"] {
   --callout-color: 202, 145, 24;          /* warm lightbulb gold */
   --callout-icon: lucide-lightbulb;
-  border-radius: 6px;
+  border-radius: 8px;
   border-left-width: 3px;
   padding: 0.6em 0.9em;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
@@ -701,7 +705,7 @@ figure.image-captioned {
 .markdown-source-view.mod-cm6 .HyperMD-header {
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
                Georgia, "Times New Roman", serif;
-  color: #463a2b;
+  color: var(--ink-heading);
 }
 
 .markdown-preview-view:not(.landing-page) h1 {
@@ -721,7 +725,7 @@ figure.image-captioned {
 .markdown-preview-view:not(.landing-page) h3 {
   font-size: 1.16em;
   font-weight: 600;
-  color: #7a6033;
+  color: var(--ink-h3);
   letter-spacing: 0.015em;
   margin: 1.5em 0 0.4em;
 }
@@ -731,14 +735,14 @@ figure.image-captioned {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.11em;
-  color: #a07a40;
+  color: var(--ink-h4);
   margin: 1.35em 0 0.3em;
 }
 
 /* Live Preview: match colour without the rule (keeps the editor's
    line metrics intact) */
-.markdown-source-view.mod-cm6 .HyperMD-header-3 { color: #7a6033; }
-.markdown-source-view.mod-cm6 .HyperMD-header-4 { color: #a07a40; }
+.markdown-source-view.mod-cm6 .HyperMD-header-3 { color: var(--ink-h3); }
+.markdown-source-view.mod-cm6 .HyperMD-header-4 { color: var(--ink-h4); }
 
 .theme-dark .markdown-preview-view:not(.landing-page) h1,
 .theme-dark .markdown-preview-view:not(.landing-page) h2 { color: #e3d3b8; }
@@ -785,7 +789,7 @@ figure.image-captioned {
   padding: 0.45rem 0.8rem;
 }
 
-.metadata-container .metadata-property-key { color: #8a7a64; }
+.metadata-container .metadata-property-key { color: var(--ink-caption); }
 
 .metadata-container .multi-select-pill {
   background: var(--background-primary);
@@ -808,4 +812,69 @@ figure.image-captioned {
 .theme-dark .metadata-container .multi-select-pill {
   background: var(--background-secondary);
   border-color: rgba(var(--brand-gold-rgb), 0.4);
+}
+
+/* ── 20. Finishing touches ──────────────────────────────────────
+   Purely presentational refinements: the note title joins the serif
+   heading spine, horizontal rules become fading gold hairlines,
+   selection gets a warm wash, numerals align in tabular contexts,
+   dark mode picks up a few missing labels, and animation is
+   suppressed for users who prefer reduced motion. */
+
+/* Note title matches the serif headings */
+.markdown-preview-view:not(.landing-page) .inline-title,
+.markdown-source-view.mod-cm6 .inline-title {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+               Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: var(--ink-heading);
+  letter-spacing: 0.005em;
+}
+.theme-dark .markdown-preview-view:not(.landing-page) .inline-title,
+.theme-dark .markdown-source-view.mod-cm6 .inline-title {
+  color: #e3d3b8;
+}
+
+/* Horizontal rules: a fading gold hairline */
+.markdown-rendered hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent,
+              rgba(var(--brand-gold-rgb), 0.6), transparent);
+  margin: 2.4em auto;
+}
+
+/* Text selection: warm gold wash */
+.markdown-rendered ::selection,
+.markdown-source-view ::selection {
+  background: rgba(var(--brand-gold-rgb), 0.3);
+}
+
+/* Dates and figures align in tables and timelines */
+.markdown-rendered table,
+.timeline {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dark mode: labels that were left dim */
+.theme-dark .metadata-container .metadata-property-key { color: #b3a489; }
+.theme-dark .markdown-rendered th { color: #b3a489; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .workspace-leaf-content[data-type="markdown"] .view-content,
+  .popover.hover-popover {
+    animation: none;
+  }
+  .markdown-rendered .image-embed img,
+  .markdown-source-view.mod-cm6 .image-embed img,
+  .callout,
+  .landing-card {
+    transition: none;
+  }
+  .markdown-rendered .image-embed img:hover,
+  .markdown-source-view.mod-cm6 .image-embed img:hover,
+  .callout:hover {
+    transform: none;
+  }
 }

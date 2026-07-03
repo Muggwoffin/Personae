@@ -1,6 +1,6 @@
 /* Callout styling for the person bio box */
 .callout[data-callout="person"] {
-  --callout-color: 37, 99, 235;        /* blue-ish */
+  --callout-color: 196, 104, 107;      /* warm rose — matches --type-person */
   --callout-icon: lucide-user;         /* user icon */
   border-radius: 8px;
   padding-top: 0.5rem;
@@ -14,8 +14,8 @@
 .person-note .metadata-container {
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
-  background-color: rgba(37, 99, 235, 0.06);
-  border: 1px solid rgba(37, 99, 235, 0.25);
+  background-color: rgba(var(--type-person-rgb), 0.06);
+  border: 1px solid rgba(var(--type-person-rgb), 0.28);
 }
 
 .person-note .metadata-property-key {
@@ -25,23 +25,23 @@
 /* ── Meta Bind INPUT fields — styled to match palette ──────── */
 .person-note .metadata-input-wrapper input[type="text"],
 .person-note .metadata-input-wrapper input[type="date"] {
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  border: 1px solid rgba(var(--type-person-rgb), 0.25);
   border-radius: 4px;
-  background: rgba(37, 99, 235, 0.03);
+  background: rgba(var(--type-person-rgb), 0.04);
   padding: 0.2rem 0.4rem;
   font-size: 0.85rem;
   color: var(--text-normal);
   transition: border-color 0.15s;
 }
 .person-note .metadata-input-wrapper input:focus {
-  border-color: rgba(37, 99, 235, 0.5);
+  border-color: rgba(var(--type-person-rgb), 0.55);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 2px rgba(var(--type-person-rgb), 0.12);
 }
 
 /* Boolean (true/false) property toggles */
 .person-note .metadata-input-wrapper input[type="checkbox"] {
-  accent-color: #2563eb;
+  accent-color: var(--type-person);
   width: 14px;
   height: 14px;
 }
@@ -63,16 +63,16 @@
   padding-right: 1rem;
 }
 
-/* Organisation note — same callout styling in teal */
+/* Organisation note — same callout styling in slate blue */
 .callout[data-callout="person"] .organisation-note,
 .organisation-note .callout[data-callout="person"] {
-  --callout-color: 13, 148, 136;
+  --callout-color: 90, 122, 158;       /* matches --type-organisation */
 }
 
 /* ── Thoughts notes — softer, warmer feel ───────────────────── */
 .thoughts-note h1, .thoughts-note h2 {
-  color: #6B5A4E;
-  border-bottom: 1px solid #E8DDD5;
+  color: #7A5C2E;
+  border-bottom: 1px solid #E8D8B8;
 }
 .thoughts-note .markdown-preview-section {
   max-width: 720px;
@@ -83,14 +83,14 @@
 .event-note .metadata-container {
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
-  background-color: rgba(215, 100, 50, 0.05);
-  border: 1px solid rgba(215, 100, 50, 0.2);
+  background-color: rgba(var(--type-event-rgb), 0.05);
+  border: 1px solid rgba(var(--type-event-rgb), 0.22);
 }
 
 /* ── Writing notes ──────────────────────────────────────────── */
 .writing-note .metadata-container {
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
-  background-color: rgba(90, 120, 80, 0.05);
-  border: 1px solid rgba(90, 120, 80, 0.2);
+  background-color: rgba(var(--type-writing-rgb), 0.06);
+  border: 1px solid rgba(var(--type-writing-rgb), 0.25);
 }

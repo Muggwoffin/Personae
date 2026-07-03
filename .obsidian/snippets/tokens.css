@@ -22,6 +22,25 @@
   --rose-deep:      #8C3335;
   --rose:           #C4686B;
 
+  /* Type accents as RGB triplets — for translucent tints via
+     rgba(var(--type-…-rgb), α). Values match the hexes above. */
+  --type-person-rgb:       196, 104, 107;
+  --type-event-rgb:        196, 130, 59;
+  --type-location-rgb:     90, 138, 106;
+  --type-organisation-rgb: 90, 122, 158;
+  --type-writing-rgb:      122, 158, 126;
+
+  /* Deep gold & bronze — hover states, rules, landing-page chrome */
+  --brand-gold-deep: #b8854a;
+  --bronze:          #8C6A38;
+  --bronze-deep:     #7A5C2E;
+
+  /* Warm paper surfaces (landing page sections) */
+  --paper-1: #FBF7EF;
+  --paper-2: #F6EFE1;
+  --paper-3: #F1E7D3;
+  --paper-border: rgba(211, 165, 115, 0.45);
+
   /* Reading "ink" (warm browns) */
   --ink-heading:    #463a2b;
   --ink-h3:         #7a6033;

@@ -86,3 +86,47 @@
 .thoughts-note strong {
   color: #5A3E18;
 }
+
+/* ── Dark mode ──────────────────────────────────────────────────
+   The warm browns above are tuned for a light page; without these
+   counterparts, dark mode rendered near-black text on a dark
+   background. Same warm-amber family, inverted. */
+.theme-dark .thoughts-note h1 {
+  color: #d8bd92;
+  border-bottom-color: rgba(212, 184, 122, 0.25);
+}
+.theme-dark .thoughts-note h2 { color: #cdae74; }
+.theme-dark .thoughts-note h3 { color: #c2a468; }
+
+.theme-dark .thoughts-note .markdown-preview-view { color: #d9cfbc; }
+
+.theme-dark .thoughts-note .markdown-preview-section {
+  border-left-color: rgba(212, 184, 122, 0.35);
+}
+
+.theme-dark .thoughts-note a.internal-link {
+  color: #d3b894 !important;
+  text-decoration-color: rgba(212, 184, 122, 0.5);
+}
+.theme-dark .thoughts-note a.internal-link:hover { color: #e3c9a0 !important; }
+.theme-dark .thoughts-note a.external-link { color: #d3b894 !important; }
+
+.theme-dark .thoughts-note blockquote {
+  border-left-color: rgba(212, 184, 122, 0.45);
+  background: rgba(212, 184, 122, 0.07);
+  color: #d6c7ae;
+}
+
+.theme-dark .thoughts-note code {
+  background: rgba(212, 184, 122, 0.12);
+  color: #d8bd92;
+}
+
+.theme-dark .thoughts-note .metadata-container {
+  background: rgba(212, 184, 122, 0.06);
+  border-color: rgba(212, 184, 122, 0.25);
+}
+
+.theme-dark .thoughts-note hr { border-top-color: rgba(212, 184, 122, 0.3); }
+
+.theme-dark .thoughts-note strong { color: #e0c88a; }

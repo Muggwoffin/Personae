@@ -1,5 +1,7 @@
 /* ============================================================
    Landing page  —  cssclass: landing-page
+   Palette: warm paper + gold/bronze, matching the reading
+   experience (tokens.css). Rose accents retired.
    ============================================================ */
 
 /* ── Full-width override ────────────────────────────────────── */
@@ -19,8 +21,8 @@
 /* ── Task section ───────────────────────────────────────────── */
 .landing-tasks-section {
   padding: 1.4rem 2rem 1rem;
-  background: #FDF5F5;
-  border-bottom: 1px solid #D9AEAE;
+  background: var(--paper-1);
+  border-bottom: 1px solid var(--paper-border);
 }
 
 .landing-tasks-header {
@@ -28,7 +30,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #A05050;
+  color: var(--bronze);
   margin-bottom: 0.7rem;
   display: flex;
   align-items: center;
@@ -39,7 +41,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #DDB4B4;
+  background: rgba(var(--brand-gold-rgb), 0.45);
 }
 
 /* Style the native Obsidian task list inside the section */
@@ -54,7 +56,7 @@
 
 .landing-tasks-section li {
   font-size: 0.88rem;
-  color: #3A2A2A;
+  color: var(--ink-quote);
   padding: 0.2rem 0;
   display: flex;
   align-items: baseline;
@@ -62,7 +64,7 @@
 }
 
 .landing-tasks-section .task-list-item-checkbox {
-  accent-color: var(--rose);
+  accent-color: var(--bronze);
   width: 14px;
   height: 14px;
   flex-shrink: 0;
@@ -79,8 +81,8 @@
 .landing-stats-bar {
   display: flex !important;
   width: 100%;
-  background: #F7ECEC;
-  border-bottom: 1px solid #D9AEAE;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--paper-border);
   margin: 0 !important;
 }
 
@@ -88,7 +90,7 @@
   flex: 1;
   padding: 0.8rem 0.5rem;
   text-align: center;
-  border-right: 1px solid #D9AEAE;
+  border-right: 1px solid var(--paper-border);
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
@@ -97,9 +99,11 @@
 .landing-stat:last-child { border-right: none; }
 
 .landing-stat-number {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-variant-numeric: tabular-nums;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--rose-deep);
+  color: var(--bronze-deep);
   line-height: 1;
   display: block;
 }
@@ -108,7 +112,7 @@
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: #A05555;
+  color: var(--bronze);
   display: block;
 }
 
@@ -121,16 +125,16 @@
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 1rem !important;
   padding: 1.4rem 2rem !important;
-  background: #F9F3F3;
+  background: var(--paper-1);
   margin: 0 !important;
 }
 
 /* ── Individual cards ───────────────────────────────────────── */
 .landing-card {
   background: #FFFFFF !important;
-  border: 1px solid #D9B2B2 !important;
-  border-top: 3px solid var(--rose) !important;
-  border-radius: 7px !important;
+  border: 1px solid var(--paper-border) !important;
+  border-top: 3px solid var(--brand-gold) !important;
+  border-radius: 8px !important;
   padding: 1.2rem 1.3rem !important;
   text-decoration: none !important;
   color: inherit !important;
@@ -141,21 +145,21 @@
 
 .landing-card:hover {
   transform: translateY(-4px) !important;
-  box-shadow: 0 8px 24px rgba(150, 50, 50, 0.14) !important;
-  background: #FDF3F3 !important;
-  border-top-color: var(--rose-deep) !important;
+  box-shadow: 0 8px 24px rgba(60, 45, 25, 0.16) !important;
+  background: #FCF8EF !important;
+  border-top-color: var(--brand-gold-deep) !important;
   text-decoration: none !important;
 }
 
 .landing-card-icon  { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1; display: block; }
-.landing-card-title { font-size: 0.98rem; font-weight: 600; color: var(--rose-deep); margin-bottom: 0.25rem; letter-spacing: 0.01em; display: block; }
-.landing-card-desc  { font-size: 0.76rem; color: #7A5050; line-height: 1.45; display: block; }
+.landing-card-title { font-size: 0.98rem; font-weight: 600; color: var(--bronze-deep); margin-bottom: 0.25rem; letter-spacing: 0.01em; display: block; }
+.landing-card-desc  { font-size: 0.76rem; color: #7A6A4E; line-height: 1.45; display: block; }
 
 /* ── Daily scratchpad ───────────────────────────────────────── */
 .landing-scratchpad {
   padding: 1.2rem 2rem 1.4rem;
-  background: #FDF5F5;
-  border-top: 1px solid #D9AEAE;
+  background: var(--paper-1);
+  border-top: 1px solid var(--paper-border);
 }
 
 .landing-scratchpad-header {
@@ -163,7 +167,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #A05050;
+  color: var(--bronze);
   margin-bottom: 0.7rem;
   display: flex;
   align-items: center;
@@ -174,7 +178,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #DDB4B4;
+  background: rgba(var(--brand-gold-rgb), 0.45);
 }
 
 .landing-scratchpad-row {
@@ -187,7 +191,7 @@
   flex: 1;
   min-height: 72px;
   padding: 0.65rem 0.8rem;
-  border: 1px solid #D9B2B2;
+  border: 1px solid var(--paper-border);
   border-radius: 6px;
   background: #FFFFFF;
   color: var(--text-normal);
@@ -200,15 +204,15 @@
 }
 
 #landing-daily-input:focus {
-  border-color: var(--rose);
-  box-shadow: 0 0 0 2px rgba(196, 104, 107, 0.15);
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 2px rgba(var(--brand-gold-rgb), 0.2);
 }
 
-#landing-daily-input::placeholder { color: #C0A0A0; }
+#landing-daily-input::placeholder { color: #C9B99A; }
 
 #landing-daily-btn {
   padding: 0.55rem 1.1rem;
-  background: var(--rose);
+  background: var(--bronze);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -221,32 +225,32 @@
   align-self: flex-end;
 }
 
-#landing-daily-btn:hover  { background: var(--rose-deep); transform: translateY(-1px); }
+#landing-daily-btn:hover  { background: var(--bronze-deep); transform: translateY(-1px); }
 #landing-daily-btn:active { transform: translateY(0); }
 
 .landing-daily-link {
   margin-top: 0.45rem;
   font-size: 0.72rem;
-  color: #A05050;
+  color: var(--bronze);
 }
 
-.landing-daily-link a { color: var(--rose-deep) !important; text-decoration: none; }
+.landing-daily-link a { color: var(--bronze-deep) !important; text-decoration: none; }
 .landing-daily-link a:hover { text-decoration: underline; }
 
 /* ── Footer ─────────────────────────────────────────────────── */
 .landing-footer {
   padding: 0.75rem 2rem;
-  background: #F2E8E8;
-  border-top: 1px solid #D9AEAE;
+  background: var(--paper-3);
+  border-top: 1px solid var(--paper-border);
   font-size: 0.74rem;
-  color: #9A6060;
+  color: #8C7A5C;
   display: flex !important;
   gap: 1.2rem;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.landing-footer a { color: var(--rose-deep) !important; text-decoration: none !important; }
+.landing-footer a { color: var(--bronze-deep) !important; text-decoration: none !important; }
 .landing-footer a:hover { text-decoration: underline !important; }
 
 /* ── Hero banner ────────────────────────────────────────────────
@@ -256,8 +260,8 @@
 
 .landing-hero {
   padding: 2.6rem 2rem 2.2rem;
-  background: linear-gradient(165deg, #FBF1F1 0%, #F5E5E5 100%);
-  border-bottom: 3px solid var(--rose);
+  background: linear-gradient(165deg, #FCF7EE 0%, #F4EBD8 100%);
+  border-bottom: 3px solid var(--brand-gold);
   position: relative;
 }
 
@@ -267,7 +271,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #A05555;
+  color: var(--bronze);
   margin-bottom: 0.55rem;
 }
 
@@ -277,7 +281,7 @@
   font-size: 2.7rem;
   line-height: 1.04;
   font-weight: 700;
-  color: var(--rose-deep);
+  color: var(--ink-heading);
   letter-spacing: 0.01em;
   margin-bottom: 0.5rem;
 }
@@ -287,20 +291,117 @@
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   font-style: italic;
   font-size: 1.02rem;
-  color: #7A5050;
+  color: #7A6A4E;
   max-width: 54ch;
 }
 
 .theme-dark .landing-hero {
-  background: linear-gradient(165deg, #2b1c1c 0%, #211616 100%);
-  border-bottom-color: var(--rose-deep);
+  background: linear-gradient(165deg, #292217 0%, #1f1a11 100%);
+  border-bottom-color: var(--brand-gold-deep);
 }
-.theme-dark .landing-hero-kicker  { color: #C58888; }
-.theme-dark .landing-hero-title   { color: #E6A8A8; }
-.theme-dark .landing-hero-tagline { color: #C29A9A; }
+.theme-dark .landing-hero-kicker  { color: #c9ae7e; }
+.theme-dark .landing-hero-title   { color: #e3d3b8; }
+.theme-dark .landing-hero-tagline { color: #bfae90; }
 
 @media (max-width: 600px) {
   .landing-hero { padding: 1.8rem 1.2rem 1.5rem; }
   .landing-hero-title { font-size: 2rem; }
   .landing-hero-tagline { font-size: 0.95rem; }
+}
+
+/* ── Dark mode: the rest of the landing chrome ──────────────────
+   Warm near-blacks so the page doesn't stay paper-light in dark
+   mode. Cards and inputs need !important to outrank the light
+   values above (and, for the textarea, its inline background). */
+.theme-dark .landing-tasks-section,
+.theme-dark .landing-scratchpad {
+  background: #262115;
+  border-color: rgba(var(--brand-gold-rgb), 0.22);
+}
+.theme-dark .landing-tasks-section li { color: #d9cfbc; }
+.theme-dark .landing-tasks-header,
+.theme-dark .landing-scratchpad-header { color: #c9ae7e; }
+.theme-dark .landing-tasks-header::after,
+.theme-dark .landing-scratchpad-header::after {
+  background: rgba(var(--brand-gold-rgb), 0.3);
+}
+
+.theme-dark .landing-stats-bar {
+  background: #221d12;
+  border-color: rgba(var(--brand-gold-rgb), 0.22);
+}
+.theme-dark .landing-stat { border-right-color: rgba(var(--brand-gold-rgb), 0.18); }
+.theme-dark .landing-stat-number { color: #e3c194; }
+.theme-dark .landing-stat-label  { color: #b3a489; }
+
+.theme-dark .landing-card-grid { background: #262115 !important; }
+.theme-dark .landing-card {
+  background: #2b2517 !important;
+  border-color: rgba(var(--brand-gold-rgb), 0.28) !important;
+  border-top-color: var(--brand-gold-deep) !important;
+}
+.theme-dark .landing-card:hover {
+  background: #322b1b !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  border-top-color: var(--brand-gold) !important;
+}
+.theme-dark .landing-card-title { color: #e3c194; }
+.theme-dark .landing-card-desc  { color: #b3a489; }
+
+.theme-dark #landing-daily-input {
+  background: #221d12 !important;
+  color: #d9cfbc !important;
+  border-color: rgba(var(--brand-gold-rgb), 0.3) !important;
+}
+.theme-dark #landing-daily-input::placeholder { color: #8a7a64; }
+
+.theme-dark .landing-footer {
+  background: #1f1a11;
+  border-color: rgba(var(--brand-gold-rgb), 0.22);
+  color: #b3a489;
+}
+.theme-dark .landing-footer a { color: #d3b894 !important; }
+
+/* ── Inline-styled blocks in the home note ──────────────────────
+   The scratchpads and footer are generated by dataviewjs with
+   inline styles, which always outrank a stylesheet. Override the
+   rose-toned values here by matching the inline signature (same
+   technique mobile.css already uses), so the whole page reads in
+   one warm family without touching the note or its scripts. The
+   research-log purple is left as a deliberate accent. */
+
+/* Section headers ("Daily note"), info lines, and their hairlines */
+.landing-page [style*="color:#A05050"] { color: var(--bronze) !important; }
+.landing-page [style*="background:#DDB4B4"] {
+  background: rgba(var(--brand-gold-rgb), 0.45) !important;
+}
+
+/* Daily textarea border + Save button (also restores the hover,
+   which the inline background previously suppressed) */
+.landing-page #landing-daily-input { border-color: var(--paper-border) !important; }
+.landing-page #landing-daily-btn { background: var(--bronze) !important; }
+.landing-page #landing-daily-btn:hover { background: var(--bronze-deep) !important; }
+
+/* Footer strip + quick links */
+.landing-page [style*="background:#F2E8E8"] {
+  background: var(--paper-3) !important;
+  border-top-color: var(--paper-border) !important;
+  color: #8C7A5C !important;
+}
+.landing-page a[style*="color:#8C3335"] { color: var(--bronze-deep) !important; }
+
+/* Dark-mode counterparts for the same inline-styled blocks */
+.theme-dark .landing-page [style*="color:#A05050"] { color: #c9ae7e !important; }
+.theme-dark .landing-page [style*="background:#DDB4B4"] {
+  background: rgba(var(--brand-gold-rgb), 0.3) !important;
+}
+.theme-dark .landing-page [style*="background:#F2E8E8"] {
+  background: #1f1a11 !important;
+  border-top-color: rgba(var(--brand-gold-rgb), 0.22) !important;
+  color: #b3a489 !important;
+}
+.theme-dark .landing-page a[style*="color:#8C3335"] { color: #d3b894 !important; }
+.theme-dark .landing-page #landing-research-input {
+  background: #221d12 !important;
+  color: #d9cfbc !important;
 }
