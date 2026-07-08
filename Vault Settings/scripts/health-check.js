@@ -10,7 +10,8 @@ const REQUIRED_PLUGINS = [
   ["research-tools", "Research Tools", "paste-coordinates commands"],
 ];
 const SCRIPTS = ["toc", "person-infobox", "org-infobox", "event-infobox", "location-infobox",
-  "publication-infobox", "person-sources", "related-notes", "master-timeline", "health-check"];
+  "publication-infobox", "person-sources", "related-notes", "master-timeline", "health-check",
+  "person-timeline", "landing-stats", "pseudonym-registry"];
 
 const rows = [];
 const enabled = app.plugins.enabledPlugins;

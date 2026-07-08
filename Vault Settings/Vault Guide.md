@@ -340,3 +340,32 @@ Rules: the date can be `1917`, `1917-11`, or `1917-11-07`; the text after the `|
 **The easier way — right-click a date.** Select a written date in any note ("7 November 1917"), right-click, choose **Create event from "…"**. A dialog opens with the date already parsed into ISO form — just describe what happened and press Enter. The date in your prose gets wrapped in a small amber pill (hover it to see the event description), and the event appears on the [[Master Timeline]] linked back to the note. The typed `[event:: …]` syntax still works too; both feed the same timeline.
 
 Use full event notes (Event Template) for major events you'll write about at length; use inline events for the dozens of small dated facts that accumulate inside location, person, and organisation notes.
+
+---
+
+## Home Stats, Uncertain Dates, Pseudonyms & Person Timelines (added July 2026)
+
+### Home-page stats bar
+
+The strip under the hero on the home page shows live counts: open `#lead` tasks, unconsulted archival documents, days to the next writing deadline, people with no `sources:` yet, and notes touched in the last 7 days. A stat is clickable when its dashboard note exists. Code: `Vault Settings/scripts/landing-stats.js`.
+
+### Uncertain and approximate dates
+
+Any date field — and inline `[event:: …]` events — now accepts uncertainty markers:
+
+| You write | Displays as | Sorts at |
+| --- | --- | --- |
+| `~1936` (or `circa 1936`, `c. 1936`, `1936?`) | c. 1936 | start of 1936 |
+| `<1940` or `before 1940` | before 1940 | just before 1940 |
+| `>1936` or `after 1936` | after 1936 | just after 1936 |
+| `1936..1938` (or `1936–1938` with an en-dash) | 1936–1938 | start of the range |
+
+Markers combine with any supported date form (`~June 1936` works). Because parsing lives in the shared `_dates.js`, this propagates to every infobox, the master timeline, and person timelines. Reload Obsidian after editing `_dates.js` — the loaded copy is cached for the session.
+
+### Pseudonym Registry
+
+[[Pseudonym Registry]] (in the People folder, linked from the home-page footer) flattens every `aliases:` entry on person notes into one alphabetical alias → person table. When an unfamiliar name turns up in a document, check it here before creating a new person note. Aliases identical to the person's display name are omitted, so the table stays a genuine cover-name index.
+
+### Person timelines
+
+Every person note now ends with a collapsed **Timeline** callout — expand it for a compact chronology of the person's birth and death, every dated event note and letter that links to them, and the note's own inline events and date pills. It stays collapsed on load (the `- ` in `> [!timeline]-`) so it never gets in the way of reading. Code: `Vault Settings/scripts/person-timeline.js`; the callout lives at the foot of the Person Template, so new person notes get it automatically.

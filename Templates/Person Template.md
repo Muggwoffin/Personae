@@ -79,3 +79,8 @@ await dv.view("Vault Settings/scripts/related-notes");
 ```
 
 ## Notes
+
+> [!timeline]- Timeline
+> ```dataviewjs
+> await dv.view("Vault Settings/scripts/person-timeline");
+> ```

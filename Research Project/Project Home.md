@@ -12,6 +12,10 @@ updated: 2026-06-10T09:38
 <div class="landing-hero"><span class="landing-hero-kicker">Research Database</span><span class="landing-hero-title">Personae</span><span class="landing-hero-tagline">A vault for people who research people</span></div>
 
 ```dataviewjs
+await dv.view("Vault Settings/scripts/landing-stats");
+```
+
+```dataviewjs
 // ── Daily scratchpad ─────────────────────────────────────────
 function todayInfo() {
   const d = new Date();
@@ -260,4 +264,4 @@ rBtn.addEventListener('click', rSave);
 rInput.addEventListener('keydown', e => { if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();rSave();} });
 ```
 
-<div style="padding:0.75rem 2rem; background:#F2E8E8; border-top:1px solid #D9AEAE; font-size:0.74rem; color:#9A6060; display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap;"><span>↗ <a href="Research Project/Master Timeline" class="internal-link" style="color:#8C3335;">Master Timeline</a></span><span>·</span><span>↗ <a href="Research Project/Network Diagram.canvas" class="internal-link" style="color:#8C3335;">Network Diagram</a></span><span>·</span><span>↗ <a href="Vault Settings/Vault Guide" class="internal-link" style="color:#8C3335;">Vault Guide</a></span><span>·</span><span>↗ <a href="Start Here" class="internal-link" style="color:#8C3335;">Start Here</a></span><span>·</span><span>↗ <a href="Vault Settings/Health Check" class="internal-link" style="color:#8C3335;">Health Check</a></span></div>
+<div style="padding:0.75rem 2rem; background:#F2E8E8; border-top:1px solid #D9AEAE; font-size:0.74rem; color:#9A6060; display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap;"><span>↗ <a href="Research Project/Master Timeline" class="internal-link" style="color:#8C3335;">Master Timeline</a></span><span>·</span><span>↗ <a href="Research Project/Network Diagram.canvas" class="internal-link" style="color:#8C3335;">Network Diagram</a></span><span>·</span><span>↗ <a href="Vault Settings/Vault Guide" class="internal-link" style="color:#8C3335;">Vault Guide</a></span><span>·</span><span>↗ <a href="Start Here" class="internal-link" style="color:#8C3335;">Start Here</a></span><span>·</span><span>↗ <a href="Vault Settings/Health Check" class="internal-link" style="color:#8C3335;">Health Check</a></span><span>·</span><span>↗ <a href="Research Project/People/Pseudonym Registry" class="internal-link" style="color:#8C3335;">Pseudonyms</a></span></div>

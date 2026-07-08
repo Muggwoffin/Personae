@@ -405,3 +405,11 @@
   background: #221d12 !important;
   color: #d9cfbc !important;
 }
+
+/* ── Stats bar (landing-stats.js) ───────────────────────────────
+   Stats that link to a dashboard render as <a class="landing-stat
+   internal-link"> — keep them looking like stats, not links. */
+.landing-stats-bar a.landing-stat {
+  text-decoration: none !important;
+  cursor: pointer;
+}

@@ -76,3 +76,8 @@ await dv.view("Vault Settings/scripts/related-notes");
 ## Notes
 
 [^1]: [[caseyHotelLuxIntimate2024]]
+
+> [!timeline]- Timeline
+> ```dataviewjs
+> await dv.view("Vault Settings/scripts/person-timeline");
+> ```

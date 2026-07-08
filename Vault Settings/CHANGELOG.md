@@ -47,3 +47,11 @@ Initial release.
 ### Updating an existing copy
 
 All shared logic lives in `Vault Settings/scripts/` and `.obsidian/plugins/` — replacing those folders (and `.obsidian/snippets/readability.css`) updates the machinery without touching your notes.
+
+## July 2026
+
+- **Home-page stats bar** (`landing-stats.js`): open leads, unconsulted documents, days to next deadline, unsourced people, and notes touched this week — live, under the hero
+- **Uncertain dates**: `~1936`, `before 1940`, `after 1936`, and `1936..1938` accepted by every date field and inline event; displayed as "c. 1936" etc. and sorted sensibly (`_dates.js`)
+- **Pseudonym Registry**: every person alias in one alphabetical alias → person lookup table
+- **Person timelines** (`person-timeline.js`): a collapsed, per-person chronology at the foot of every person note
+- Health check now verifies the three new scripts

@@ -130,3 +130,7 @@ body.is-mobile [class*="dataview-error"] {
 body.is-mobile .callout[data-callout="summary"]:has(.block-language-dataviewjs) {
   display: none;
 }
+/* and the collapsed person Timeline callout (same dv.view limitation) */
+body.is-mobile .callout[data-callout="timeline"]:has(.block-language-dataviewjs) {
+  display: none;
+}

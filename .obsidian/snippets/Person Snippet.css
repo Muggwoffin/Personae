@@ -94,3 +94,33 @@
   background-color: rgba(var(--type-writing-rgb), 0.06);
   border: 1px solid rgba(var(--type-writing-rgb), 0.25);
 }
+
+/* ── Person timeline callout — discrete, collapsed chronology ──
+   > [!timeline]- Timeline   (the "-" keeps it collapsed on load)
+   Rendered by person-timeline.js at the foot of person notes. */
+.callout[data-callout="timeline"] {
+  --callout-color: 196, 104, 107;      /* warm rose — matches --type-person */
+  --callout-icon: lucide-history;
+  background: transparent;
+  border: 1px dashed rgba(var(--type-person-rgb), 0.4);
+  border-radius: 8px;
+  padding: 0.45em 0.8em;
+}
+
+.callout[data-callout="timeline"] .callout-title-inner {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(var(--type-person-rgb), 0.9);
+}
+
+/* Compact rows inside the timeline view */
+.person-timeline p {
+  margin: 0.18em 0;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+
+.theme-dark .callout[data-callout="timeline"] {
+  border-color: rgba(var(--type-person-rgb), 0.35);
+}

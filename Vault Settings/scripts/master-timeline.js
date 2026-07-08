@@ -46,7 +46,7 @@ for (const org of pages.where(o => o.type === "organisation" && notTemplate(o)))
 for (const page of pages.where(p => p.event && notTemplate(p))) {
   const evs = Array.isArray(page.event) ? page.event : [page.event];
   for (const raw of evs) {
-    const m = String(raw).match(/^\s*(\d{4}(?:-\d{2})?(?:-\d{2})?)\s*[|]\s*(.+)$/);
+    const m = String(raw).match(/^\s*([~<>]?\s*\d{4}(?:-\d{2})?(?:-\d{2})?(?:\s*(?:\.\.|–)\s*\d{4}(?:-\d{2})?(?:-\d{2})?)?)\s*[|]\s*(.+)$/);
     if (!m) continue;
     allEntries.push({ date: m[1], sortDate: parseDate(m[1]), type: "inline",
       name: m[2].trim(), description: `in ${page.file.name}`, link: page.file.path, icon: "🕑" });
