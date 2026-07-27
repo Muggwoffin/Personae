@@ -6,6 +6,8 @@ tags:
   - meta
 ---
 ![[PersonaeLogo.png]]
+
+[![DOI](https://zenodo.org/badge/1277071084.svg)](https://doi.org/10.5281/zenodo.21624472)
 # Start Here 👋
 
 Welcome! This vault is a complete working environment for qualitative research about *people*. 
