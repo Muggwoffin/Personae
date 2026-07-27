@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this vault template, please cite it using the metadata below."
+type: software
+title: "Personae: An Obsidian Vault Template for Historical & Social Network Research"
+authors:
+  - family-names: "Casey"
+    given-names: "Maurice J."
+    orcid: "https://orcid.org/0000-0001-6019-3578"
+version: 1.0.0
+date-released: 2026-07-27
+url: "https://github.com/Muggwoffin/Personae"
+license: "MIT"
+abstract: "An open-source Obsidian vault template for researchers whose work revolves around people, events, places, organisations, concepts, and sources."
